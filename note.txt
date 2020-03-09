@@ -1,0 +1,12 @@
+MONAR
+CHYBD
+EFGIK
+LPQST
+UVWXZ
+
+keyword : monarchy
+plaintext : instruments
+ciphertext : gatlmzclrqtx
+IN ST RU ME NT SZ 
+
+GA XZ MZ OF RQ TX
