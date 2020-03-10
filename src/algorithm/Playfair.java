@@ -1,6 +1,6 @@
 package algorithm;
 
-import part.CharElement;
+import element.CharElement;
 
 import java.awt.*;
 import java.util.ArrayList;

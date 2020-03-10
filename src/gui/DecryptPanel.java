@@ -1,9 +1,9 @@
 package gui;
 
 import algorithm.Playfair;
-import part.CharElement;
-import subProcess.CharOperation;
-import subProcess.PhraseOperation;
+import element.CharElement;
+import utils.CharOperation;
+import utils.PhraseOperation;
 
 import javax.swing.*;
 import java.awt.*;

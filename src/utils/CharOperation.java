@@ -1,11 +1,7 @@
-package subProcess;
-
-import part.CharElement;
+package utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 
 public class CharOperation {
 
