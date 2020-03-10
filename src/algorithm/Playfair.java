@@ -12,6 +12,7 @@ public class Playfair {
         for (CharElement bigram:listBigram) {
             Point pos1 = this.getPos(matrix, bigram.getChar1());
             Point pos2 = this.getPos(matrix, bigram.getChar2());
+            System.out.println(bigram.getChar1() + " " + bigram.getChar2());
 
             if(pos1.y == pos2.y){
                 chiper += matrix[(pos1.x + 1) % 5][pos1.y];

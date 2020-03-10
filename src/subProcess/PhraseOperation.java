@@ -11,7 +11,7 @@ public class PhraseOperation {
     private ArrayList<Character> closeChar;
     private CharOperation charOperation;
 
-    public PhraseOperation(){
+    public PhraseOperation() {
         this.charOperation = new CharOperation();
         this.keywordMatrix = new char[5][5];
     }
@@ -24,53 +24,49 @@ public class PhraseOperation {
         this.keyword = str.toCharArray();
     }
 
-    public char[][] getMatrix(){
+    public char[][] getMatrix() {
         this.closeChar = new ArrayList<>();
+        closeChar.add('J');
         int ascii = 65;
         int index = 0;
-        for (int i=0; i<5; i++){
-            for(int j=0; j<5; j++){
-                if(index < this.keyword.length){
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (index < this.keyword.length) {
                     this.keywordMatrix[i][j] = this.keyword[index];
                     closeChar.add(this.keyword[index]);
                     index++;
                 } else {
-                    while (charOperation.checkExist(closeChar, (char)ascii)){
+                    while (charOperation.checkExist(closeChar, (char) ascii)) {
                         ascii++;
                     }
-                    if(ascii == 74){
-                        this.keywordMatrix[i][j] = (char)(ascii+1);
-                        ascii += 2;
-                    } else {
-                        this.keywordMatrix[i][j] = (char)(ascii);
-                        ascii++;
-                    }
+                    this.keywordMatrix[i][j] = (char) (ascii);
+                    ascii++;
                 }
             }
         }
         return this.keywordMatrix;
     }
 
-    public ArrayList<CharElement> getPhrase(String str){
+    public ArrayList<CharElement> getPhrase(String str) {
         ArrayList<CharElement> list = new ArrayList<>();
         str = str.toUpperCase();
         str = charOperation.removeSpace(str);
         char[] chars = str.toCharArray();
         int index = 0;
         do {
-            if (index == chars.length-1){
+            if (index == chars.length - 1) {
                 list.add(new CharElement(chars[index], 'Z'));
                 index++;
             } else {
-                if (chars[index] != chars[index+1]){
-                    list.add(new CharElement(chars[index], chars[index+1]));
+                if (chars[index] != chars[index + 1]) {
+                    list.add(new CharElement(chars[index], chars[index + 1]));
                     index += 2;
-                }else{
+                } else {
                     list.add(new CharElement(chars[index], 'Z'));
                     index++;
                 }
             }
-        }while (index < chars.length);
+        } while (index < chars.length);
         return list;
     }
 }
