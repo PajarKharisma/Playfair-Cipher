@@ -51,6 +51,7 @@ public class PhraseOperation {
         ArrayList<CharElement> list = new ArrayList<>();
         str = str.toUpperCase();
         str = charOperation.removeSpace(str);
+        str = charOperation.removeJ(str);
         char[] chars = str.toCharArray();
         int index = 0;
         do {
